@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<link href='http://fonts.googleapis.com/css?family=Cardo:400,400italic,700' rel='stylesheet' type='text/css'>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background-image: url('assets/headshot-photography.jpg');
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-color: red;
+		}
+
+		#home, #portofoliu, #rants {
+			display: block;
+			height: 100vh;
+		}
+
+		#portofoliu {
+			background-color: #e3e3e3;
+		}
+
+		#rants {
+			background-color: teal;
+		}
+
+		header {
+			background-color: #222;
+			float: left;
+			display: block;
+			height: 40px;
+			width: 100%;
+			line-height: 40px;
+			position: fixed;
+		}
+
+		header ul {
+			float: right;
+		}
+
+		header ul li {
+			float: left;
+			list-style-type: none;
+		}
+
+		header ul li a {
+			color: #fff;
+			text-decoration: none;
+		}
+
+		.languages {
+			position: absolute;
+			top: 70%;
+			text-align: center;
+			width: 100%;
+		}
+
+		.languages>p {
+			margin: auto;
+		}
+
+		.languages p>a {
+			color: #fff;
+			font-weight: 555;
+			padding: 5px 15px;
+			border: 2px solid #fff;
+			text-decoration: none;
+		}
+
+		.languages p>a:hover {
+			text-decoration: underline;
+		}
+		header ul li>a {
+			font-family: Verdana;
+			font-size: 12px;
+			font-weight: 600;
+			padding: 5px 10px;
+		}
+
+		p.name, p.subtitle {
+			font-family: 'Cardo', serif;
+			color: #fff;
+			font-size: 16px;
+			text-align: center;
+		}
+
+		p.name {
+			font-weight: 600;
+			font-size: 48px;
+		}
+
+		.clear {
+			clear: both;
+		}
+
+		.avatar {
+			margin-top: 200px;
+			border-radius: 150px;
+		}
+
+	</style>
+	<!-- include jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<body>
+	<header>
+		<ul>
+			<li>
+				<a href="#home" style="background-color: red; color: #000" class="current">Home</a>
+			</li>
+			<li>
+				<a href="#portofoliu" style="background-color: #e3e3e3; color: #333">Portofoliu</a>
+			</li>
+			<li>
+				<a href="#rants" style="background-color: teal; color: #fff;">Thoughts & Rants</a>
+			</li>
+		</ul>
+	</header>
+	<div class="clear"></div>
+	<div id="home" class="active">
+		<div style="height: 40px;"></div>
+		<p style="text-align: center;">
+			<img src="assets/salam-1.jpg" class="avatar" />
+		</p>
+		
+		<p class="name">Denis Berea</p>
+		<p class="subtitle">Photography extraordinaire</p>
+		<div class="languages">
+			<p>
+				<a href="#">English</a>
+				<a href="#">Romana</a>
+			</p>
+		</div>
+		<div class="clear"></div>
+	</div>
+	<div id="portofoliu">
+		<div style="height: 40px;"></div>
+		<div class="clear"></div>
+	</div>
+	<div id="rants">
+		<div style="height: 40px;"></div>
+		<div class="clear"</div>
+	</div>
+
+	<!--
+		Daca mouse-ul intra pe div-ul din link-urile din header, atunci activeaza stilurile puse acolo, altfel nu.
+	-->
+	<script>
+	jQuery(document).ready(function($) {
+		// remove styles on everything except first a
+		$('header ul li a').slice(1).removeAttr('style');
+		$('header ul li a').click(function() {
+			var curent = $('.current');
+			var href = $(this).attr('href');
+			// if you're on a section which isn't highlighted then add the style attr to the default.
+			$(href).removeClass('active');
+			$(href).addClass('active');
+		});
+	});
+	</script
+</body>
+</html>
